@@ -5,7 +5,7 @@ using System.Linq;
 
 namespace Dibware.Helpers.System
 {
-    public static partial class EnumHelper
+    public static class EnumHelper
     {
         /// <summary>
         /// Gets all combined items from an enum value.
@@ -27,21 +27,14 @@ namespace Dibware.Helpers.System
         {
             var valueAsInt = Convert.ToInt32(value, CultureInfo.InvariantCulture);
 
-            return from object item
-                    in Enum.GetValues(typeof(T))
-                   let itemAsInt = Convert.ToInt32(item, CultureInfo.InvariantCulture)
-                   where itemAsInt == (valueAsInt & itemAsInt)
-                   select (T)item;
+            var result = 
+                from object item
+                in Enum.GetValues(typeof(T))
+                let itemAsInt = Convert.ToInt32(item, CultureInfo.InvariantCulture)
+                where itemAsInt == (valueAsInt & itemAsInt)
+                select (T)item;
 
-            //foreach (object item in Enum.GetValues(typeof(T)))
-            //{
-            //    int itemAsInt = Convert.ToInt32(item, CultureInfo.InvariantCulture);
-
-            //    if (itemAsInt == (valueAsInt & itemAsInt))
-            //    {
-            //        yield return (T)item;
-            //    }
-            //}
+            return result;
         }
 
         public static String GetName<T>(Enum value)

@@ -1,8 +1,9 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Dibware.Helpers.System;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
-using System.Collections.Generic;
+using System.Linq;
 
-namespace Dibware.Helpers.System
+namespace Dibware.Helpers.Tests.System
 {
     [TestClass]
     public class EnumHelperTests
@@ -27,17 +28,17 @@ namespace Dibware.Helpers.System
         public void Test_GetAllSelectedItems_ReturnsSelectedItems()
         {
             // Arrange 
-            var myFruits = Fruit.Apple | Fruit.Orange;
-            var selectedFruitNames = new List<String>();
+            const Fruit myFruits = Fruit.Apple | Fruit.Orange;
+            const Int32 expectedCount = 2;
 
             // Act
-
-            foreach (var item in EnumHelper.GetAllSelectedItems<Fruit>(myFruits))
-            {
-                selectedFruitNames.Add(item.ToString());
-            }
+            var selectedFruitNames =
+                EnumHelper.GetAllSelectedItems<Fruit>(myFruits)
+                    .Select(item => item.ToString())
+                    .ToList();
 
             // Assert
+            Assert.AreEqual(expectedCount, selectedFruitNames.Count);
             Assert.IsTrue(selectedFruitNames.Contains("Apple"));
             Assert.IsTrue(selectedFruitNames.Contains("Orange"));
         }
