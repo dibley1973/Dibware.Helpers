@@ -1,4 +1,4 @@
 Dibware.Helpers
 ===============
 
-An assembly of helpers for general coding situations
+A C# .Net  assembly of helpers for general coding situations
