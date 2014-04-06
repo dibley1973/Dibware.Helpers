@@ -1,7 +1,8 @@
 ﻿using System;
+using Dibware.Helpers.Validation;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace Dibware.Helpers.Validation
+namespace Dibware.Helpers.Tests.Validation
 {
     [TestClass]
     public class GuardTests
@@ -23,12 +24,39 @@ namespace Dibware.Helpers.Validation
         [TestMethod]
         public void Test_ArgumentIsNotNull_WithOutNullArgument_DoesNothing()
         {
-
             // Arrange
-            Object argument = new Object();
+            var argument = new Object();
 
             // Action
             Guard.ArgumentIsNotNull(argument, "argument");
+
+            // Assert
+        }
+
+        #endregion
+
+        #region ArgumentIsNotNullOrEmpty
+
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentNullException))]
+        public void Test_ArgumentIsNotNullOrEmpty_WithNullArgument_ThrowsArgumentNullException()
+        {
+            // Arrange
+
+            // Action
+            Guard.ArgumentIsNotNullOrEmpty(null, "argument");
+
+            // Assert
+        }
+
+        [TestMethod]
+        public void Test_ArgumentIsNotNullOrEmpty_WithOutNullArgument_DoesNothing()
+        {
+            // Arrange
+            const String value = "Yabba-dabba-doo!";
+
+            // Action
+            Guard.ArgumentIsNotNullOrEmpty(value, "argument");
 
             // Assert
         }
@@ -90,6 +118,33 @@ namespace Dibware.Helpers.Validation
 
             // Action
             Guard.ArgumentOutOfRange(false, "argument", errorMessage);
+
+            // Assert
+        }
+
+        #endregion
+
+        #region InvalidOperation
+
+        [TestMethod]
+        [ExpectedException(typeof(InvalidOperationException))]
+        public void Test_InvalidOperation_WithTrueConditionAndMessage_ThrowsInvalidOperationException()
+        {
+            // Arrange
+
+            // Action
+            Guard.InvalidOperation(true, "Invalid Operation");
+
+            // Assert
+        }
+
+        [TestMethod]
+        public void Test_InvalidOperation_WithFalseConditionAndMessage_DoesNothing()
+        {
+            // Arrange
+
+            // Action
+            Guard.InvalidOperation(false, "Invalid Operation");
 
             // Assert
         }
