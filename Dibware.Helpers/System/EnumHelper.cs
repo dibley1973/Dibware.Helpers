@@ -37,9 +37,37 @@ namespace Dibware.Helpers.System
             return result;
         }
 
+        /// <summary>
+        /// Gets the name.
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="value">The value.</param>
+        /// <returns></returns>
+        /// <example>
+        /// var result = EnumHelper.GetName<Fruit>(myFruit);
+        /// </example>
         public static String GetName<T>(Enum value)
         {
             return Enum.GetName(typeof(T), value);
         }
+
+        ///// <summary>
+        ///// Gets the enum.
+        ///// </summary>
+        ///// <typeparam name="T"></typeparam>
+        ///// <param name="value">The value.</param>
+        ///// <returns></returns>
+        ///// <exception cref="System.ArgumentOutOfRangeException">value</exception>
+        //public static T GetEnum<T>(Int32 value)
+        //{
+        //    if (typeof(T).IsEnumDefined(value))
+        //    {
+        //        return (T)value;
+        //    }
+        //    var enumTypeName =typeof(T).ToString();
+        //    var messageFormat = "{0} is not a valid value for enum of type {1} ";
+        //    var message = String.Format(messageFormat, value, enumTypeName);
+        //    throw new ArgumentOutOfRangeException("value", value, message);
+        //}
     }
 }
