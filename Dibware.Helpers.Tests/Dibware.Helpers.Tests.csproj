@@ -55,7 +55,9 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="System\EnumHelperTests.cs" />
+    <Compile Include="Validation\EnsureofTTests.cs" />
     <Compile Include="Validation\GuardTests.cs" />
+    <Compile Include="Validation\EnsureTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Dibware.Helpers\Dibware.Helpers.csproj">
