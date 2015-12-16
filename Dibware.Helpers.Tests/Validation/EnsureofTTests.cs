@@ -7,16 +7,16 @@ namespace Dibware.Helpers.Tests.Validation
     [TestClass]
     public class EnsureofTTests
     {
-        #region ArgumentIsNotNull
+        #region IsNotNull
 
         [TestMethod]
-        [ExpectedException(typeof(ArgumentNullException))]
-        public void Test_ArgumentIsNotNull_WithNullArgument_ThrowsArgumentNullException()
+        [ExpectedException(typeof(NullReferenceException))]
+        public void Test_ArgumentIsNotNull_WithNullArgument_ThrowsNullReferenceException()
         {
             // Arrange
 
             // Action
-            Ensure<string>.ArgumentIsNotNull(null, "argument");
+            Ensure<string>.IsNotNull(null, "argument");
 
             // Assert
         }
@@ -28,7 +28,7 @@ namespace Dibware.Helpers.Tests.Validation
             const string argument = "TestValue";
 
             // Action
-            var actual = Ensure<string>.ArgumentIsNotNull(argument, "argument");
+            var actual = Ensure<string>.IsNotNull(argument, "argument");
 
             // Assert
             Assert.AreEqual(argument, actual);

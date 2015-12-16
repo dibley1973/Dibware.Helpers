@@ -7,7 +7,7 @@ namespace Dibware.Helpers.Tests.Validation
     [TestClass]
     public class GuardTests
     {
-        #region ArgumentIsNotNull
+        #region IsNotNull
 
         [TestMethod]
         [ExpectedException(typeof(ArgumentNullException))]

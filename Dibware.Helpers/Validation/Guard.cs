@@ -12,7 +12,7 @@ namespace Dibware.Helpers.Validation
         /// Checks if the specified arguments the is not null.
         /// If it is throws a System.ArgumentNullException
         /// </summary>
-        /// <example>Guard.ArgumentIsNotNull(arg1, "arg1");</example>
+        /// <example>Guard.IsNotNull(arg1, "arg1");</example>
         /// <param name="value">The value.</param>
         /// <param name="argumentName">The argument name.</param>
         /// <exception cref="ArgumentNullException"></exception>
@@ -29,7 +29,7 @@ namespace Dibware.Helpers.Validation
         /// Checks if the specified string is not null or empty.
         /// If it is throws a System.ArgumentNullException
         /// </summary>
-        /// <example>Guard.ArgumentIsNotNull(arg1, "arg1");</example>
+        /// <example>Guard.IsNotNull(arg1, "arg1");</example>
         /// <param name="value">The value.</param>
         /// <param name="argumentName">The argument name.</param>
         /// <exception cref="ArgumentNullException"></exception>
