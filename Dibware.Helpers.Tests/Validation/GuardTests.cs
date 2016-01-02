@@ -63,6 +63,59 @@ namespace Dibware.Helpers.Tests.Validation
 
         #endregion
 
+        #region ArgumentIsNullOrWhiteSpace
+
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentNullException))]
+        public void Test_ArgumentIsNullOrWhiteSpace_WithNullArgument_ThrowsArgumentNullException()
+        {
+            // Arrange
+
+            // Action
+            Guard.ArgumentIsNullOrWhiteSpace(null, "argument");
+
+            // Assert
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentNullException))]
+        public void Test_ArgumentIsNullOrWhiteSpace_WithemptyArgument_ThrowsArgumentNullException()
+        {
+            // Arrange
+
+            // Action
+            Guard.ArgumentIsNullOrWhiteSpace("", "argument");
+
+            // Assert
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentNullException))]
+        public void Test_ArgumentIsNullOrWhiteSpace_WithWhitespaceArgument_ThrowsArgumentNullException()
+        {
+            // Arrange
+
+            // Action
+            Guard.ArgumentIsNullOrWhiteSpace("   ", "argument");
+
+            // Assert
+        }
+
+        [TestMethod]
+        public void Test_ArgumentIsNullOrWhiteSpace_WithOutNullArgument_DoesNothing()
+        {
+            // Arrange
+            const String value = "Yabba-dabba-doo!";
+
+            // Action
+            Guard.ArgumentIsNullOrWhiteSpace(value, "argument");
+
+            // Assert
+        }
+
+        #endregion
+
+
         #region ArgumentOutOfRange
 
         [TestMethod]

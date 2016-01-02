@@ -43,6 +43,23 @@ namespace Dibware.Helpers.Validation
         }
 
         /// <summary>
+        /// Checks if the specified string is not null, empty, or white space.
+        /// If it is throws a System.ArgumentNullException
+        /// </summary>
+        /// <example>Guard.IsNotNull(arg1, "arg1");</example>
+        /// <param name="value">The value.</param>
+        /// <param name="argumentName">The argument name.</param>
+        /// <exception cref="ArgumentNullException"></exception>
+        [DebuggerHidden]    //Does not appear at all in the call stack
+        public static void ArgumentIsNullOrWhiteSpace(String value, String argumentName)
+        {
+            if (String.IsNullOrWhiteSpace(value))
+            {
+                throw new ArgumentNullException(argumentName);
+            }
+        }
+
+        /// <summary>
         /// Checks if the specified condition is true. If it is 
         /// a System.ArgumentOutOfRangeException is thrown with the 
         /// argument name
