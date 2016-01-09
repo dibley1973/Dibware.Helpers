@@ -40,8 +40,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="System\EnumHelper.cs" />
     <Compile Include="Validation\Ensure.cs" />
-    <Compile Include="Validation\Guard.cs" />
     <Compile Include="Validation\EnsureOfT.cs" />
+    <Compile Include="Validation\Guard\Conditionals.cs" />
+    <Compile Include="Validation\Guard\Object.cs" />
+    <Compile Include="Validation\Guard\String.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

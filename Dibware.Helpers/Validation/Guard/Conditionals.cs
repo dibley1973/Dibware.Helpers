@@ -1,64 +1,11 @@
 ﻿using System;
 using System.Diagnostics;
 
+// ReSharper disable once CheckNamespace
 namespace Dibware.Helpers.Validation
 {
-    /// <summary>
-    /// Encapsulates guard-clause logic to allow a neat and tidy single line call
-    /// </summary>
-    public static class Guard
+    public static partial class Guard
     {
-        /// <summary>
-        /// Checks if the specified arguments the is not null.
-        /// If it is throws a System.ArgumentNullException
-        /// </summary>
-        /// <example>Guard.IsNotNull(arg1, "arg1");</example>
-        /// <param name="value">The value.</param>
-        /// <param name="argumentName">The argument name.</param>
-        /// <exception cref="ArgumentNullException"></exception>
-        [DebuggerHidden]    //Does not appear at all in the call stack
-        public static void ArgumentIsNotNull(object value, String argumentName)
-        {
-            if (value == null)
-            {
-                throw new ArgumentNullException(argumentName);
-            }
-        }
-
-        /// <summary>
-        /// Checks if the specified string is not null or empty.
-        /// If it is throws a System.ArgumentNullException
-        /// </summary>
-        /// <example>Guard.IsNotNull(arg1, "arg1");</example>
-        /// <param name="value">The value.</param>
-        /// <param name="argumentName">The argument name.</param>
-        /// <exception cref="ArgumentNullException"></exception>
-        [DebuggerHidden]    //Does not appear at all in the call stack
-        public static void ArgumentIsNotNullOrEmpty(String value, String argumentName)
-        {
-            if (String.IsNullOrEmpty(value))
-            {
-                throw new ArgumentNullException(argumentName);
-            }
-        }
-
-        /// <summary>
-        /// Checks if the specified string is not null, empty, or white space.
-        /// If it is throws a System.ArgumentNullException
-        /// </summary>
-        /// <example>Guard.IsNotNull(arg1, "arg1");</example>
-        /// <param name="value">The value.</param>
-        /// <param name="argumentName">The argument name.</param>
-        /// <exception cref="ArgumentNullException"></exception>
-        [DebuggerHidden]    //Does not appear at all in the call stack
-        public static void ArgumentIsNullOrWhiteSpace(String value, String argumentName)
-        {
-            if (String.IsNullOrWhiteSpace(value))
-            {
-                throw new ArgumentNullException(argumentName);
-            }
-        }
-
         /// <summary>
         /// Checks if the specified condition is true. If it is 
         /// a System.ArgumentOutOfRangeException is thrown with the 

@@ -1,6 +1,6 @@
-﻿using System;
-using Dibware.Helpers.Validation;
+﻿using Dibware.Helpers.Validation;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
 
 namespace Dibware.Helpers.Tests.Validation
 {
@@ -115,6 +115,58 @@ namespace Dibware.Helpers.Tests.Validation
 
         #endregion
 
+        #region ArgumentIsAlphaNumeric
+
+        [TestMethod]
+        public void Test_ArgumentIsAlphaNumeric_WithAlphabeticalCharachters_DoesNothing()
+        {
+            // Arrange
+            const String value = "Hello";
+
+            // Action
+            Guard.ArgumentIsAlphaNumeric(value, "argument");
+
+            // Assert
+        }
+
+        [TestMethod]
+        public void Test_ArgumentIsAlphaNumeric_WithNumericCharachters_DoesNothing()
+        {
+            // Arrange
+            const String value = "123";
+
+            // Action
+            Guard.ArgumentIsAlphaNumeric(value, "argument");
+
+            // Assert
+        }
+
+        [TestMethod]
+        public void Test_ArgumentIsAlphaNumeric_WithAlphaNumericCharachters_DoesNothing()
+        {
+            // Arrange
+            const String value = "Hello123";
+
+            // Action
+            Guard.ArgumentIsAlphaNumeric(value, "argument");
+
+            // Assert
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentOutOfRangeException))]
+        public void Test_ArgumentIsAlphaNumeric_WithNonAlphaNumericCharachter_ThrowsException()
+        {
+            // Arrange
+            const String value = " ";
+
+            // Action
+            Guard.ArgumentIsAlphaNumeric(value, "argument");
+
+            // Assert
+        }
+
+        #endregion
 
         #region ArgumentOutOfRange
 
