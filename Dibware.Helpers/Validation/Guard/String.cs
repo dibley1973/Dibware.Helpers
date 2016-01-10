@@ -42,8 +42,8 @@ namespace Dibware.Helpers.Validation
         }
 
         /// <summary>
-        ///  Checks if the specified string only has alphabetical or numeric charaters.
-        /// If it is throws a System.ArgumentNullException
+        /// Checks if the specified string only has alphabetical or numeric charaters.
+        /// If it does not, then throws a System.ArgumentNullException
         /// </summary>
         /// <example>Guard.ArgumentIsAlphaNumeric(arg1, "arg1");</example>
         /// <param name="value">The value.</param>
@@ -52,9 +52,25 @@ namespace Dibware.Helpers.Validation
         [DebuggerHidden]    //Does not appear at all in the call stack
         public static void ArgumentIsAlphaNumeric(String value, String argumentName)
         {
-            Regex rg = new Regex(@"^[a-zA-Z0-9]*$");
-            var isAlphaNumeric = rg.IsMatch(value);
-            if (!isAlphaNumeric)
+            const string pattern = @"^[a-zA-Z0-9]*$";
+            ArgumentConformsToRegex(value, pattern, argumentName);
+        }
+
+        /// <summary>
+        /// Checks if the specified string only conforms to the specified regular expression
+        /// If it does not, then throws a System.ArgumentNullException
+        /// </summary>
+        /// <param name="value">The value.</param>
+        /// <param name="regularExpressionPattern">The regular expression pattern.</param>
+        /// <param name="argumentName">Name of the argument.</param>
+        /// <exception cref="ArgumentOutOfRangeException"></exception>
+        /// <example>Guard.ArgumentIsAlphaNumeric(arg1, "arg1");</example>
+        [DebuggerHidden]    //Does not appear at all in the call stack
+        public static void ArgumentConformsToRegex(string value, string regularExpressionPattern, string argumentName)
+        {
+            Regex expression = new Regex(regularExpressionPattern);
+            var conforms = expression.IsMatch(value);
+            if (!conforms)
             {
                 throw new ArgumentOutOfRangeException(argumentName);
             }

@@ -11,7 +11,7 @@ namespace Dibware.Helpers.Tests.Validation
 
         [TestMethod]
         [ExpectedException(typeof(ArgumentNullException))]
-        public void Test_ArgumentIsNotNull_WithNullArgument_ThrowsArgumentNullException()
+        public void ArgumentIsNotNull_WithNullArgument_ThrowsArgumentNullException()
         {
             // Arrange
 
@@ -22,7 +22,7 @@ namespace Dibware.Helpers.Tests.Validation
         }
 
         [TestMethod]
-        public void Test_ArgumentIsNotNull_WithOutNullArgument_DoesNothing()
+        public void ArgumentIsNotNull_WithOutNullArgument_DoesNothing()
         {
             // Arrange
             var argument = new Object();
@@ -39,7 +39,7 @@ namespace Dibware.Helpers.Tests.Validation
 
         [TestMethod]
         [ExpectedException(typeof(ArgumentNullException))]
-        public void Test_ArgumentIsNotNullOrEmpty_WithNullArgument_ThrowsArgumentNullException()
+        public void ArgumentIsNotNullOrEmpty_WithNullArgument_ThrowsArgumentNullException()
         {
             // Arrange
 
@@ -50,7 +50,7 @@ namespace Dibware.Helpers.Tests.Validation
         }
 
         [TestMethod]
-        public void Test_ArgumentIsNotNullOrEmpty_WithOutNullArgument_DoesNothing()
+        public void ArgumentIsNotNullOrEmpty_WithOutNullArgument_DoesNothing()
         {
             // Arrange
             const String value = "Yabba-dabba-doo!";
@@ -67,7 +67,7 @@ namespace Dibware.Helpers.Tests.Validation
 
         [TestMethod]
         [ExpectedException(typeof(ArgumentNullException))]
-        public void Test_ArgumentIsNullOrWhiteSpace_WithNullArgument_ThrowsArgumentNullException()
+        public void ArgumentIsNullOrWhiteSpace_WithNullArgument_ThrowsArgumentNullException()
         {
             // Arrange
 
@@ -79,7 +79,7 @@ namespace Dibware.Helpers.Tests.Validation
 
         [TestMethod]
         [ExpectedException(typeof(ArgumentNullException))]
-        public void Test_ArgumentIsNullOrWhiteSpace_WithemptyArgument_ThrowsArgumentNullException()
+        public void ArgumentIsNullOrWhiteSpace_WithemptyArgument_ThrowsArgumentNullException()
         {
             // Arrange
 
@@ -91,7 +91,7 @@ namespace Dibware.Helpers.Tests.Validation
 
         [TestMethod]
         [ExpectedException(typeof(ArgumentNullException))]
-        public void Test_ArgumentIsNullOrWhiteSpace_WithWhitespaceArgument_ThrowsArgumentNullException()
+        public void ArgumentIsNullOrWhiteSpace_WithWhitespaceArgument_ThrowsArgumentNullException()
         {
             // Arrange
 
@@ -102,7 +102,7 @@ namespace Dibware.Helpers.Tests.Validation
         }
 
         [TestMethod]
-        public void Test_ArgumentIsNullOrWhiteSpace_WithOutNullArgument_DoesNothing()
+        public void ArgumentIsNullOrWhiteSpace_WithOutNullArgument_DoesNothing()
         {
             // Arrange
             const String value = "Yabba-dabba-doo!";
@@ -118,7 +118,7 @@ namespace Dibware.Helpers.Tests.Validation
         #region ArgumentIsAlphaNumeric
 
         [TestMethod]
-        public void Test_ArgumentIsAlphaNumeric_WithAlphabeticalCharachters_DoesNothing()
+        public void ArgumentIsAlphaNumeric_WithAlphabeticalCharacters_DoesNothing()
         {
             // Arrange
             const String value = "Hello";
@@ -130,7 +130,7 @@ namespace Dibware.Helpers.Tests.Validation
         }
 
         [TestMethod]
-        public void Test_ArgumentIsAlphaNumeric_WithNumericCharachters_DoesNothing()
+        public void ArgumentIsAlphaNumeric_WithNumericCharacters_DoesNothing()
         {
             // Arrange
             const String value = "123";
@@ -142,7 +142,7 @@ namespace Dibware.Helpers.Tests.Validation
         }
 
         [TestMethod]
-        public void Test_ArgumentIsAlphaNumeric_WithAlphaNumericCharachters_DoesNothing()
+        public void ArgumentIsAlphaNumeric_WithAlphaNumericCharacters_DoesNothing()
         {
             // Arrange
             const String value = "Hello123";
@@ -155,7 +155,7 @@ namespace Dibware.Helpers.Tests.Validation
 
         [TestMethod]
         [ExpectedException(typeof(ArgumentOutOfRangeException))]
-        public void Test_ArgumentIsAlphaNumeric_WithNonAlphaNumericCharachter_ThrowsException()
+        public void ArgumentIsAlphaNumeric_WithNonAlphaNumericCharachter_ThrowsException()
         {
             // Arrange
             const String value = " ";
@@ -172,7 +172,7 @@ namespace Dibware.Helpers.Tests.Validation
 
         [TestMethod]
         [ExpectedException(typeof(ArgumentOutOfRangeException))]
-        public void Test_ArgumentOutOfRange_WithTrueCondition_ThrowsArgumentOutOfRange()
+        public void ArgumentOutOfRange_WithTrueCondition_ThrowsArgumentOutOfRange()
         {
             // Arrange
 
@@ -183,7 +183,7 @@ namespace Dibware.Helpers.Tests.Validation
         }
 
         [TestMethod]
-        public void Test_ArgumentOutOfRange_WithFalseCondition_DoesNothing()
+        public void ArgumentOutOfRange_WithFalseCondition_DoesNothing()
         {
             // Arrange
 
@@ -194,7 +194,7 @@ namespace Dibware.Helpers.Tests.Validation
         }
 
         [TestMethod]
-        public void Test_ArgumentOutOfRange_WithTrueConditionAndMessage_ThrowsArgumentOutOfRangeAndCorrectMessage()
+        public void ArgumentOutOfRange_WithTrueConditionAndMessage_ThrowsArgumentOutOfRangeAndCorrectMessage()
         {
             // Arrange
             const String errorMessage = "Test Message";
@@ -216,7 +216,7 @@ namespace Dibware.Helpers.Tests.Validation
         }
 
         [TestMethod]
-        public void Test_ArgumentOutOfRange_WithFalseConditionAndMessage_DoesNothing()
+        public void ArgumentOutOfRange_WithFalseConditionAndMessage_DoesNothing()
         {
             // Arrange
             const String errorMessage = "Test Message";
@@ -229,11 +229,43 @@ namespace Dibware.Helpers.Tests.Validation
 
         #endregion
 
+        #region ArgumentConformsToRegex
+
+        [TestMethod]
+        public void ArgumentConformsToRegex_WhenMatchesPattern_DoesNothing()
+        {
+            // Arrange
+            const String value = "Hello 123";
+            const string pattern = @"^[a-zA-Z0-9\s]*$";
+
+            // Action
+            Guard.ArgumentConformsToRegex(value, pattern, "argument");
+
+            // Assert
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentOutOfRangeException))]
+        public void ArgumentConformsToRegex_WithDoesNotMatchPattern_ThrowsException()
+        {
+            // Arrange
+            const String value = "Hello, 123";
+            const string pattern = @"^[a-zA-Z0-9\s]*$";
+
+            // Action
+            Guard.ArgumentConformsToRegex(value, pattern, "argument");
+
+            // Assert
+        }
+
+
+        #endregion
+
         #region InvalidOperation
 
         [TestMethod]
         [ExpectedException(typeof(InvalidOperationException))]
-        public void Test_InvalidOperation_WithTrueConditionAndMessage_ThrowsInvalidOperationException()
+        public void InvalidOperation_WithTrueConditionAndMessage_ThrowsInvalidOperationException()
         {
             // Arrange
 
@@ -244,7 +276,7 @@ namespace Dibware.Helpers.Tests.Validation
         }
 
         [TestMethod]
-        public void Test_InvalidOperation_WithFalseConditionAndMessage_DoesNothing()
+        public void InvalidOperation_WithFalseConditionAndMessage_DoesNothing()
         {
             // Arrange
 

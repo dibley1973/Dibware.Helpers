@@ -11,7 +11,7 @@ namespace Dibware.Helpers.Tests.Validation
 
         [TestMethod]
         [ExpectedException(typeof(NullReferenceException))]
-        public void Test_ArgumentIsNotNull_WithNullArgument_ThrowsNullReferenceException()
+        public void ArgumentIsNotNull_WithNullArgument_ThrowsNullReferenceException()
         {
             // Arrange
 
@@ -22,7 +22,7 @@ namespace Dibware.Helpers.Tests.Validation
         }
 
         [TestMethod]
-        public void Test_ArgumentIsNotNull_WithOutNullArgument_ReturnsOriginalValue()
+        public void ArgumentIsNotNull_WithOutNullArgument_ReturnsOriginalValue()
         {
             // Arrange
             const string argument = "TestValue";

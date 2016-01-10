@@ -25,7 +25,7 @@ namespace Dibware.Helpers.Tests.System
         #region Tests
 
         [TestMethod]
-        public void Test_GetAllSelectedItems_ReturnsSelectedItems()
+        public void GetAllSelectedItems_ReturnsSelectedItems()
         {
             // Arrange 
             const Fruit myFruits = Fruit.Apple | Fruit.Orange;
@@ -44,7 +44,7 @@ namespace Dibware.Helpers.Tests.System
         }
 
         [TestMethod]
-        public void Test_GetName_ReturnsCorrectName()
+        public void GetName_ReturnsCorrectName()
         {
             // Arrange 
             const Fruit myFruit = Fruit.Pear;

@@ -11,7 +11,7 @@ namespace Dibware.Helpers.Tests.Validation
 
         [TestMethod]
         [ExpectedException(typeof(ArgumentNullException))]
-        public void Test_ArgumentIsNotNullOrEmpty_WithNullArgument_ThrowsArgumentNullException()
+        public void ArgumentIsNotNullOrEmpty_WithNullArgument_ThrowsArgumentNullException()
         {
             // Arrange
 
@@ -22,7 +22,7 @@ namespace Dibware.Helpers.Tests.Validation
         }
 
         [TestMethod]
-        public void Test_ArgumentIsNotNullOrEmpty_WithOutNullArgument_DoesNothing()
+        public void ArgumentIsNotNullOrEmpty_WithOutNullArgument_DoesNothing()
         {
             // Arrange
             const String argument = "Yabba-dabba-doo!";
@@ -40,7 +40,7 @@ namespace Dibware.Helpers.Tests.Validation
 
         [TestMethod]
         [ExpectedException(typeof(ArgumentNullException))]
-        public void Test_ArgumentIsNotNullOrWhiteSpace_WithNullArgument_ThrowsArgumentNullException()
+        public void ArgumentIsNotNullOrWhiteSpace_WithNullArgument_ThrowsArgumentNullException()
         {
             // Arrange
 
@@ -51,7 +51,7 @@ namespace Dibware.Helpers.Tests.Validation
         }
 
         [TestMethod]
-        public void Test_ArgumentIsNotNullOrWhiteSpace_WithOutNullArgument_ReturnsOriginalValue()
+        public void ArgumentIsNotNullOrWhiteSpace_WithOutNullArgument_ReturnsOriginalValue()
         {
             // Arrange
             const String argument = "Yabba-dabba-doo!";
