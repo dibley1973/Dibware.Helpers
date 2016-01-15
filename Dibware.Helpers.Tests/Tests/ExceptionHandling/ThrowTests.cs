@@ -25,7 +25,7 @@ namespace Dibware.Helpers.Tests.Tests.ExceptionHandling
             // ARRANGE
 
             // ACT
-            Throw<ArgumentOutOfRangeException>.If(false, "Validation Passed");
+            Throw<ArgumentOutOfRangeException>.If(false, "Validation Failed");
 
             // ASSERT
         }
