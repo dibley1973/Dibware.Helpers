@@ -17,6 +17,7 @@ namespace Dibware.Helpers.Validation
         /// <param name="argumentName">The argument name.</param>
         /// <exception cref="ArgumentNullException"></exception>
         [DebuggerHidden]    //Does not appear at all in the call stack
+        [ContractAnnotation("value: null => halt")]
         public static void ArgumentIsNotNullOrEmpty(string value, [InvokerParameterName] string argumentName)
         {
             if (String.IsNullOrEmpty(value))
@@ -34,6 +35,7 @@ namespace Dibware.Helpers.Validation
         /// <param name="argumentName">The argument name.</param>
         /// <exception cref="ArgumentNullException"></exception>
         [DebuggerHidden]    //Does not appear at all in the call stack
+        [ContractAnnotation("value: null => halt")]
         public static void ArgumentIsNullOrWhiteSpace(string value, [InvokerParameterName] string argumentName)
         {
             if (String.IsNullOrWhiteSpace(value))

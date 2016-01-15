@@ -58,10 +58,11 @@
   </Choose>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="System\EnumHelperTests.cs" />
-    <Compile Include="Validation\EnsureofTTests.cs" />
-    <Compile Include="Validation\GuardTests.cs" />
-    <Compile Include="Validation\EnsureTests.cs" />
+    <Compile Include="Tests\ExceptionHandling\ThrowTests.cs" />
+    <Compile Include="Tests\System\EnumHelperTests.cs" />
+    <Compile Include="Tests\Validation\EnsureofTTests.cs" />
+    <Compile Include="Tests\Validation\GuardTests.cs" />
+    <Compile Include="Tests\Validation\EnsureTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Dibware.Helpers\Dibware.Helpers.csproj">

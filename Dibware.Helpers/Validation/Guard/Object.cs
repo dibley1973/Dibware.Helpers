@@ -1,6 +1,6 @@
-﻿using System;
+﻿using JetBrains.Annotations;
+using System;
 using System.Diagnostics;
-using JetBrains.Annotations;
 
 // ReSharper disable once CheckNamespace
 namespace Dibware.Helpers.Validation
@@ -16,6 +16,7 @@ namespace Dibware.Helpers.Validation
         /// <param name="argumentName">The argument name.</param>
         /// <exception cref="ArgumentNullException"></exception>
         [DebuggerHidden]    //Does not appear at all in the call stack
+        [ContractAnnotation("value: null => halt")]
         public static void ArgumentIsNotNull(object value, [InvokerParameterName] string argumentName)
         {
             if (value == null)
