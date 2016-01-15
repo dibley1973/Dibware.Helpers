@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Diagnostics;
 using System.Text.RegularExpressions;
+using JetBrains.Annotations;
 
 // ReSharper disable once CheckNamespace
 namespace Dibware.Helpers.Validation
@@ -16,7 +17,7 @@ namespace Dibware.Helpers.Validation
         /// <param name="argumentName">The argument name.</param>
         /// <exception cref="ArgumentNullException"></exception>
         [DebuggerHidden]    //Does not appear at all in the call stack
-        public static void ArgumentIsNotNullOrEmpty(String value, String argumentName)
+        public static void ArgumentIsNotNullOrEmpty(string value, [InvokerParameterName] string argumentName)
         {
             if (String.IsNullOrEmpty(value))
             {
@@ -33,7 +34,7 @@ namespace Dibware.Helpers.Validation
         /// <param name="argumentName">The argument name.</param>
         /// <exception cref="ArgumentNullException"></exception>
         [DebuggerHidden]    //Does not appear at all in the call stack
-        public static void ArgumentIsNullOrWhiteSpace(String value, String argumentName)
+        public static void ArgumentIsNullOrWhiteSpace(string value, [InvokerParameterName] string argumentName)
         {
             if (String.IsNullOrWhiteSpace(value))
             {
@@ -50,7 +51,7 @@ namespace Dibware.Helpers.Validation
         /// <param name="argumentName">Name of the argument.</param>
         /// <exception cref="ArgumentOutOfRangeException"></exception>
         [DebuggerHidden]    //Does not appear at all in the call stack
-        public static void ArgumentIsAlphaNumeric(String value, String argumentName)
+        public static void ArgumentIsAlphaNumeric(string value, [InvokerParameterName] string argumentName)
         {
             const string pattern = @"^[a-zA-Z0-9]*$";
             ArgumentConformsToRegex(value, pattern, argumentName);
@@ -66,7 +67,7 @@ namespace Dibware.Helpers.Validation
         /// <exception cref="ArgumentOutOfRangeException"></exception>
         /// <example>Guard.ArgumentIsAlphaNumeric(arg1, "arg1");</example>
         [DebuggerHidden]    //Does not appear at all in the call stack
-        public static void ArgumentConformsToRegex(string value, string regularExpressionPattern, string argumentName)
+        public static void ArgumentConformsToRegex(string value, string regularExpressionPattern, [InvokerParameterName] string argumentName)
         {
             Regex expression = new Regex(regularExpressionPattern);
             var conforms = expression.IsMatch(value);

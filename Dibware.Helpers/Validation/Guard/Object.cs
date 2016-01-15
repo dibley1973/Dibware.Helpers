@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Diagnostics;
+using JetBrains.Annotations;
 
 // ReSharper disable once CheckNamespace
 namespace Dibware.Helpers.Validation
@@ -15,11 +16,27 @@ namespace Dibware.Helpers.Validation
         /// <param name="argumentName">The argument name.</param>
         /// <exception cref="ArgumentNullException"></exception>
         [DebuggerHidden]    //Does not appear at all in the call stack
-        public static void ArgumentIsNotNull(object value, String argumentName)
+        public static void ArgumentIsNotNull(object value, [InvokerParameterName] string argumentName)
         {
             if (value == null)
             {
                 throw new ArgumentNullException(argumentName);
+            }
+        }
+
+        /// <summary>
+        /// Equalses the default type of the of.
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="value">The value.</param>
+        /// <param name="argumentName">Name of the argument.</param>
+        /// <exception cref="ArgumentException">The identity cannot be the type's default value;identity</exception>
+        [DebuggerHidden]    //Does not appear at all in the call stack
+        public static void EqualsDefaultOfType<T>(T value, [InvokerParameterName] string argumentName)
+        {
+            if (Equals(value, default(T)))
+            {
+                throw new ArgumentException("The value cannot be the type's default value", "value");
             }
         }
     }

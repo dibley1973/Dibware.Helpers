@@ -16,6 +16,7 @@ namespace Dibware.Helpers.Tests.Validation
             // Arrange
 
             // Action
+            // ReSharper disable once NotResolvedInText
             Guard.ArgumentIsNotNull(null, "argument");
 
             // Assert
@@ -28,6 +29,7 @@ namespace Dibware.Helpers.Tests.Validation
             var argument = new Object();
 
             // Action
+            // ReSharper disable once NotResolvedInText
             Guard.ArgumentIsNotNull(argument, "argument");
 
             // Assert
@@ -44,6 +46,7 @@ namespace Dibware.Helpers.Tests.Validation
             // Arrange
 
             // Action
+            // ReSharper disable once NotResolvedInText
             Guard.ArgumentIsNotNullOrEmpty(null, "argument");
 
             // Assert
@@ -56,6 +59,7 @@ namespace Dibware.Helpers.Tests.Validation
             const String value = "Yabba-dabba-doo!";
 
             // Action
+            // ReSharper disable once NotResolvedInText
             Guard.ArgumentIsNotNullOrEmpty(value, "argument");
 
             // Assert
@@ -72,6 +76,7 @@ namespace Dibware.Helpers.Tests.Validation
             // Arrange
 
             // Action
+            // ReSharper disable once NotResolvedInText
             Guard.ArgumentIsNullOrWhiteSpace(null, "argument");
 
             // Assert
@@ -84,6 +89,7 @@ namespace Dibware.Helpers.Tests.Validation
             // Arrange
 
             // Action
+            // ReSharper disable once NotResolvedInText
             Guard.ArgumentIsNullOrWhiteSpace("", "argument");
 
             // Assert
@@ -96,6 +102,7 @@ namespace Dibware.Helpers.Tests.Validation
             // Arrange
 
             // Action
+            // ReSharper disable once NotResolvedInText
             Guard.ArgumentIsNullOrWhiteSpace("   ", "argument");
 
             // Assert
@@ -108,6 +115,7 @@ namespace Dibware.Helpers.Tests.Validation
             const String value = "Yabba-dabba-doo!";
 
             // Action
+            // ReSharper disable once NotResolvedInText
             Guard.ArgumentIsNullOrWhiteSpace(value, "argument");
 
             // Assert
@@ -124,6 +132,7 @@ namespace Dibware.Helpers.Tests.Validation
             const String value = "Hello";
 
             // Action
+            // ReSharper disable once NotResolvedInText
             Guard.ArgumentIsAlphaNumeric(value, "argument");
 
             // Assert
@@ -136,6 +145,7 @@ namespace Dibware.Helpers.Tests.Validation
             const String value = "123";
 
             // Action
+            // ReSharper disable once NotResolvedInText
             Guard.ArgumentIsAlphaNumeric(value, "argument");
 
             // Assert
@@ -148,6 +158,7 @@ namespace Dibware.Helpers.Tests.Validation
             const String value = "Hello123";
 
             // Action
+            // ReSharper disable once NotResolvedInText
             Guard.ArgumentIsAlphaNumeric(value, "argument");
 
             // Assert
@@ -161,6 +172,7 @@ namespace Dibware.Helpers.Tests.Validation
             const String value = " ";
 
             // Action
+            // ReSharper disable once NotResolvedInText
             Guard.ArgumentIsAlphaNumeric(value, "argument");
 
             // Assert
@@ -177,6 +189,7 @@ namespace Dibware.Helpers.Tests.Validation
             // Arrange
 
             // Action
+            // ReSharper disable once NotResolvedInText
             Guard.ArgumentOutOfRange(true, "argument");
 
             // Assert
@@ -188,6 +201,7 @@ namespace Dibware.Helpers.Tests.Validation
             // Arrange
 
             // Action
+            // ReSharper disable once NotResolvedInText
             Guard.ArgumentOutOfRange(false, "argument");
 
             // Assert
@@ -203,6 +217,7 @@ namespace Dibware.Helpers.Tests.Validation
             try
             {
                 // Action
+                // ReSharper disable once NotResolvedInText
                 Guard.ArgumentOutOfRange(true, "argument", errorMessage);
 
                 // Assert
@@ -222,6 +237,7 @@ namespace Dibware.Helpers.Tests.Validation
             const String errorMessage = "Test Message";
 
             // Action
+            // ReSharper disable once NotResolvedInText
             Guard.ArgumentOutOfRange(false, "argument", errorMessage);
 
             // Assert
@@ -239,6 +255,7 @@ namespace Dibware.Helpers.Tests.Validation
             const string pattern = @"^[a-zA-Z0-9\s]*$";
 
             // Action
+            // ReSharper disable once NotResolvedInText
             Guard.ArgumentConformsToRegex(value, pattern, "argument");
 
             // Assert
@@ -253,11 +270,43 @@ namespace Dibware.Helpers.Tests.Validation
             const string pattern = @"^[a-zA-Z0-9\s]*$";
 
             // Action
+            // ReSharper disable once NotResolvedInText
             Guard.ArgumentConformsToRegex(value, pattern, "argument");
 
             // Assert
         }
 
+
+        #endregion
+
+        #region EqualsDefaultOfType
+
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentException))]
+        public void EqualsDefaultOfType_WhenGivenDefaultOfType_ThrowsException()
+        {
+            // ARRANGE
+            const int value = default(int);
+
+            // ACT
+            // ReSharper disable once NotResolvedInText
+            Guard.EqualsDefaultOfType(value, "value");
+
+            // ASSERT
+        }
+
+        [TestMethod]
+        public void EqualsDefaultOfType_WhenGivenNonDefaultOfType_ThrowsException()
+        {
+            // ARRANGE
+            const int value = 10;
+
+            // ACT
+            // ReSharper disable once NotResolvedInText
+            Guard.EqualsDefaultOfType(value, "value");
+
+            // ASSERT
+        }
 
         #endregion
 

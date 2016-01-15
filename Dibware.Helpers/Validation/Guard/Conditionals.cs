@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Diagnostics;
+using JetBrains.Annotations;
 
 // ReSharper disable once CheckNamespace
 namespace Dibware.Helpers.Validation
@@ -18,7 +19,7 @@ namespace Dibware.Helpers.Validation
         /// <param name="argumentName">Name of the argument.</param>
         /// <exception cref="ArgumentOutOfRangeException"></exception>
         [DebuggerHidden]    //Does not appear at all in the call stack
-        public static void ArgumentOutOfRange(Boolean condition, String argumentName)
+        public static void ArgumentOutOfRange(Boolean condition, [InvokerParameterName] string argumentName)
         {
             if (condition)
             {
@@ -40,7 +41,7 @@ namespace Dibware.Helpers.Validation
         /// <exception cref="ArgumentOutOfRangeException"></exception>
         [DebuggerHidden]    //Does not appear at all in the call stack
         public static void ArgumentOutOfRange(Boolean condition,
-            String argumentName, String message)
+            [InvokerParameterName] string argumentName, String message)
         {
             if (condition)
             {
