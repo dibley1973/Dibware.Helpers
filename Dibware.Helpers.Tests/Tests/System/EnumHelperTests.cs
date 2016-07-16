@@ -1,9 +1,9 @@
-﻿using Dibware.Helpers.System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System;
+﻿using System;
 using System.Linq;
+using Dibware.Helpers.System;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace Dibware.Helpers.Tests.System
+namespace Dibware.Helpers.UnitTests.Tests.System
 {
     [TestClass]
     public class EnumHelperTests
@@ -55,6 +55,32 @@ namespace Dibware.Helpers.Tests.System
             // Assert
             Assert.AreEqual("Pear", result);
         }
+
+        //[TestMethod]
+        //public void GetName_ReturnsHighestvalueWhenGivenTwo()
+        //{
+        //    // Arrange 
+        //    const Fruit myFruits = Fruit.Apple | Fruit.Orange;
+
+        //    // Act
+        //    var result = EnumHelper.GetName<Fruit>(myFruits);
+
+        //    // Assert
+        //    Assert.AreEqual("Orange", result);
+        //}
+
+        //[TestMethod]
+        //public void GetName_ReturnsHighestvalueWhenGivenMultiple()
+        //{
+        //    // Arrange 
+        //    const Fruit myFruits = Fruit.Apple | Fruit.Orange | Fruit.Plum;
+
+        //    // Act
+        //    var result = EnumHelper.GetName<Fruit>(myFruits);
+
+        //    // Assert
+        //    Assert.AreEqual("Plum", result);
+        //}
 
         #endregion
     }

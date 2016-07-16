@@ -8,7 +8,7 @@ namespace Dibware.Helpers.System
     public static class EnumHelper
     {
         /// <summary>
-        /// Gets all combined items from an enum value.
+        /// Gets all combined items from an enum value where the enum is expressed as bitwise flags.
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="value">The value.</param>
@@ -38,7 +38,7 @@ namespace Dibware.Helpers.System
         }
 
         /// <summary>
-        /// Gets the name.
+        /// Retrieves the name of the constant in the specified enumeration that has the specified value.
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="value">The value.</param>

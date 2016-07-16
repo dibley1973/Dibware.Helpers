@@ -6,8 +6,8 @@
     <ProjectGuid>{5EDBDE25-363E-43B7-B5A7-3544B36104EA}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Dibware.Helpers.Tests</RootNamespace>
-    <AssemblyName>Dibware.Helpers.Tests</AssemblyName>
+    <RootNamespace>Dibware.Helpers.UnitTests</RootNamespace>
+    <AssemblyName>Dibware.Helpers.UnitTests</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
