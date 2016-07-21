@@ -2,7 +2,7 @@
 using Dibware.Helpers.ExceptionHandling;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace Dibware.Helpers.Tests.Tests.ExceptionHandling
+namespace Dibware.Helpers.UnitTests.Tests.ExceptionHandling
 {
     [TestClass]
     public class ThrowTests

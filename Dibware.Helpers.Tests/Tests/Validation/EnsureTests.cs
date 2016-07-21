@@ -1,8 +1,8 @@
-﻿using Dibware.Helpers.Validation;
+﻿using System;
+using Dibware.Helpers.Validation;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System;
 
-namespace Dibware.Helpers.Tests.Validation
+namespace Dibware.Helpers.UnitTests.Tests.Validation
 {
     [TestClass]
     public class EnsureTests
