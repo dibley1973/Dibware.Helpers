@@ -7,7 +7,8 @@ A C# .Net  assembly of helpers for general coding situations
 * Dibware.Helpers.System.EnumHelper
 * Dibware.Helpers.Validation.Guard
 * Dibware.Helpers.Validation.Ensure
-* Dibware.Helpers.Validation.Ensure<T>
+* Dibware.Helpers.Validation.EnsureOfT
+
 
 ### Dibware.Helpers.System.EnumHelper
 A helper class for use with bitwise flag enumerations
@@ -32,7 +33,38 @@ Encapsulates guard clause logic
 * void ArgumentOutOfRange(Boolean condition, [InvokerParameterName] string argumentName, String message)
 * void InvalidOperation(Boolean condition, String message)
 * void ArgumentIsNotNull(object value, [InvokerParameterName] string argumentName)
-* void EqualsDefaultOfType<T>(T value, [InvokerParameterName] string argumentName)
+* void NotEqualsDefaultOfType<T>(T value, [InvokerParameterName] string argumentName)
+* void ArgumentIsNotNullOrEmpty(string value, [InvokerParameterName] string argumentName)
+* void ArgumentIsNullOrWhiteSpace(string value, [InvokerParameterName] string argumentName)
+* void ArgumentIsAlphaNumeric(string value, [InvokerParameterName] string argumentName)
+* void ArgumentConformsToRegex(string value, string regularExpressionPattern, [InvokerParameterName] string argumentName)
+
+#### void ArgumentOutOfRange(Boolean condition, [InvokerParameterName] string argumentName)
+Checks if the specified condition is true. If it is a System.ArgumentOutOfRangeException is thrown with the argument name
+
+#### void ArgumentOutOfRange(Boolean condition, [InvokerParameterName] string argumentName, String message)
+Checks if the specified condition is true. If it is a System.ArgumentOutOfRangeException is thrown with the argument name and specified message
+
+#### void ArgumentOutOfRange(Boolean condition, [InvokerParameterName] string argumentName, String message)
+Checks if the specified condition is true. If it is a System.ArgumentOutOfRangeException is thrown with the argument name and specified message
+
+#### void ArgumentIsNotNull(object value, [InvokerParameterName] string argumentName)
+Checks if the specified arguments the is not null. If it is throws a System.ArgumentNullException
+
+#### void NotEqualsDefaultOfType<T>(T value, [InvokerParameterName] string argumentName)
+Checks if the specified argument value has the default value for the type. If it has then a System.ArgumentNullException is thrown.
+
+#### void ArgumentIsNotNullOrEmpty(string value, [InvokerParameterName] string argumentName)
+Checks if the specified string is not null or empty. If it is throws a System.ArgumentNullException
+
+#### void ArgumentIsNullOrWhiteSpace(string value, [InvokerParameterName] string argumentName)
+Checks if the specified string is not null, empty, or white space. If it is throws a System.ArgumentNullException
+
+#### void ArgumentIsAlphaNumeric(string value, [InvokerParameterName] string argumentName)
+Checks if the specified string only has alphabetical or numeric charaters. If it does not, then throws a System.ArgumentNullException
+
+#### void ArgumentConformsToRegex(string value, string regularExpressionPattern, [InvokerParameterName] string argumentName)
+Checks if the specified string only conforms to the specified regular expression. If it does not, then throws a System.ArgumentNullException
 
 
 
@@ -49,7 +81,7 @@ Checks if the specified string is not null or empty. If it is throws a System.Ar
 #### static string ArgumentIsNotNullOrWhiteSpace(String value, String argumentName)
 Checks if the specified string is not null, empty or whitespace. If it is throws a System.ArgumentNullException.
 
-### Dibware.Helpers.Validation.Ensure<T>
+### Dibware.Helpers.Validation.EnsureOfT
 Encapsualtes logic to ensures arguments pass specific validation.
 
 #### Members

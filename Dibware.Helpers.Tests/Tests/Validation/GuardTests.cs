@@ -279,31 +279,31 @@ namespace Dibware.Helpers.UnitTests.Tests.Validation
 
         #endregion
 
-        #region EqualsDefaultOfType
+        #region NotEqualsDefaultOfType
 
         [TestMethod]
         [ExpectedException(typeof(ArgumentException))]
-        public void EqualsDefaultOfType_WhenGivenDefaultOfType_ThrowsException()
+        public void NotEqualsDefaultOfType_WhenGivenDefaultOfType_ThrowsException()
         {
             // ARRANGE
             const int value = default(int);
 
             // ACT
             // ReSharper disable once NotResolvedInText
-            Guard.EqualsDefaultOfType(value, "value");
+            Guard.NotEqualsDefaultOfType(value, "value");
 
             // ASSERT
         }
 
         [TestMethod]
-        public void EqualsDefaultOfType_WhenGivenNonDefaultOfType_ThrowsException()
+        public void NotEqualsDefaultOfType_WhenGivenNonDefaultOfType_DoesNotThrowException()
         {
             // ARRANGE
             const int value = 10;
 
             // ACT
             // ReSharper disable once NotResolvedInText
-            Guard.EqualsDefaultOfType(value, "value");
+            Guard.NotEqualsDefaultOfType(value, "value");
 
             // ASSERT
         }

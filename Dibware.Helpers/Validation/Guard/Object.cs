@@ -28,14 +28,15 @@ namespace Dibware.Helpers.Validation
         }
 
         /// <summary>
-        /// Equalses the default type of the of.
+        /// Checks if the specified argument value has the default value for the type.
+        /// If it has then a System.ArgumentNullException is thrown.
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="value">The value.</param>
         /// <param name="argumentName">Name of the argument.</param>
         /// <exception cref="ArgumentException">The identity cannot be the type's default value;identity</exception>
         //[DebuggerHidden]    //Does not appear at all in the call stack
-        public static void EqualsDefaultOfType<T>(T value, [InvokerParameterName] string argumentName)
+        public static void NotEqualsDefaultOfType<T>(T value, [InvokerParameterName] string argumentName)
         {
             if (Equals(value, default(T)))
             {

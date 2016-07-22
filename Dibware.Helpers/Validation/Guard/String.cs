@@ -1,6 +1,5 @@
 ﻿using JetBrains.Annotations;
 using System;
-using System.Diagnostics;
 using System.Text.RegularExpressions;
 
 // ReSharper disable once CheckNamespace
@@ -19,7 +18,7 @@ namespace Dibware.Helpers.Validation
         /// <param name="value">The value.</param>
         /// <param name="argumentName">The argument name.</param>
         /// <exception cref="ArgumentNullException"></exception>
-        [DebuggerHidden]    //Does not appear at all in the call stack
+        //[DebuggerHidden]    //Does not appear at all in the call stack
         [ContractAnnotation("value: null => halt")]
         public static void ArgumentIsNotNullOrEmpty(string value, [InvokerParameterName] string argumentName)
         {
@@ -37,7 +36,7 @@ namespace Dibware.Helpers.Validation
         /// <param name="value">The value.</param>
         /// <param name="argumentName">The argument name.</param>
         /// <exception cref="ArgumentNullException"></exception>
-        [DebuggerHidden]    //Does not appear at all in the call stack
+        //[DebuggerHidden]    //Does not appear at all in the call stack
         [ContractAnnotation("value: null => halt")]
         public static void ArgumentIsNullOrWhiteSpace(string value, [InvokerParameterName] string argumentName)
         {
@@ -55,7 +54,7 @@ namespace Dibware.Helpers.Validation
         /// <param name="value">The value.</param>
         /// <param name="argumentName">Name of the argument.</param>
         /// <exception cref="ArgumentOutOfRangeException"></exception>
-        [DebuggerHidden]    //Does not appear at all in the call stack
+        //[DebuggerHidden]    //Does not appear at all in the call stack
         public static void ArgumentIsAlphaNumeric(string value, [InvokerParameterName] string argumentName)
         {
             const string pattern = @"^[a-zA-Z0-9]*$";
@@ -71,7 +70,7 @@ namespace Dibware.Helpers.Validation
         /// <param name="argumentName">Name of the argument.</param>
         /// <exception cref="ArgumentOutOfRangeException"></exception>
         /// <example>Guard.ArgumentIsAlphaNumeric(arg1, "arg1");</example>
-        [DebuggerHidden]    //Does not appear at all in the call stack
+        //[DebuggerHidden]    //Does not appear at all in the call stack
         public static void ArgumentConformsToRegex(string value, string regularExpressionPattern, [InvokerParameterName] string argumentName)
         {
             Regex expression = new Regex(regularExpressionPattern);

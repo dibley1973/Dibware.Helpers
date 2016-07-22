@@ -32,7 +32,7 @@ namespace Dibware.Helpers.Validation
         /// <summary>
         /// Checks if the specified condition is true. If it is 
         /// a System.ArgumentOutOfRangeException is thrown with the 
-        /// argument name
+        /// argument name and specified message
         /// </summary>
         /// <example>
         /// Guard.ArgumentOutOfRange((collection.Count > 0), "arg1", "collection must have items");
