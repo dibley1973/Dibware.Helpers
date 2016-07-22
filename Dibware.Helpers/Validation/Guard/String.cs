@@ -1,11 +1,14 @@
-﻿using System;
+﻿using JetBrains.Annotations;
+using System;
 using System.Diagnostics;
 using System.Text.RegularExpressions;
-using JetBrains.Annotations;
 
 // ReSharper disable once CheckNamespace
 namespace Dibware.Helpers.Validation
 {
+    /// <summary>
+    /// Encapsulates guard clause logic
+    /// </summary>
     public static partial class Guard
     {
         /// <summary>

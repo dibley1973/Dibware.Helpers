@@ -1,10 +1,12 @@
-﻿using System;
-using System.Diagnostics;
-using JetBrains.Annotations;
+﻿using JetBrains.Annotations;
+using System;
 
 // ReSharper disable once CheckNamespace
 namespace Dibware.Helpers.Validation
 {
+    /// <summary>
+    /// Encapsulates guard clause logic
+    /// </summary>
     public static partial class Guard
     {
         /// <summary>
@@ -18,7 +20,7 @@ namespace Dibware.Helpers.Validation
         /// <param name="condition">if set to <c>true</c> the ArgumentOutOfRangeException is thrown.</param>
         /// <param name="argumentName">Name of the argument.</param>
         /// <exception cref="ArgumentOutOfRangeException"></exception>
-        [DebuggerHidden]    //Does not appear at all in the call stack
+        //[DebuggerHidden]    //Does not appear at all in the call stack
         public static void ArgumentOutOfRange(Boolean condition, [InvokerParameterName] string argumentName)
         {
             if (condition)
@@ -39,7 +41,7 @@ namespace Dibware.Helpers.Validation
         /// <param name="argumentName">Name of the argument.</param>
         /// <param name="message">The message.</param>
         /// <exception cref="ArgumentOutOfRangeException"></exception>
-        [DebuggerHidden]    //Does not appear at all in the call stack
+        //[DebuggerHidden]    //Does not appear at all in the call stack
         public static void ArgumentOutOfRange(Boolean condition,
             [InvokerParameterName] string argumentName, String message)
         {
@@ -55,7 +57,7 @@ namespace Dibware.Helpers.Validation
         /// <param name="condition">if set to <c>true</c> [condition].</param>
         /// <param name="message">The message.</param>
         /// <exception cref="InvalidOperationException"></exception>
-        [DebuggerHidden]    //Does not appear at all in the call stack
+        //[DebuggerHidden]    //Does not appear at all in the call stack
         public static void InvalidOperation(Boolean condition, String message)
         {
             if (condition)

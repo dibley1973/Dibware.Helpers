@@ -18,7 +18,7 @@ namespace Dibware.Helpers.Validation
         /// <param name="itemName">The item name.</param>
         /// <returns>The item being checked if argument was not null.</returns>
         /// <exception cref="ArgumentNullException"></exception>
-        [DebuggerHidden]    //Does not appear at all in the call stack
+        //[DebuggerHidden]    //Does not appear at all in the call stack
         public static T IsNotNull(T value, String itemName)
         {
             if (value == null)

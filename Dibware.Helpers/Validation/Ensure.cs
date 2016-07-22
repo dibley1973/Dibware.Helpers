@@ -4,7 +4,7 @@ using System.Diagnostics;
 namespace Dibware.Helpers.Validation
 {
     /// <summary>
-    /// encapsualtes logic to ensures arguments pass specific validation.
+    /// Encapsualtes logic to ensures arguments pass specific validation.
     /// </summary>
     public static class Ensure
     {
@@ -17,7 +17,7 @@ namespace Dibware.Helpers.Validation
         /// <param name="argumentName">The argument name.</param>
         /// <returns>The argument being checked if argument was not null or empty.</returns>
         /// <exception cref="ArgumentNullException"></exception>
-        [DebuggerHidden]    //Does not appear at all in the call stack
+        //[DebuggerHidden]    //Does not appear at all in the call stack
         public static string ArgumentIsNotNullOrEmpty(String value, String argumentName)
         {
             if (String.IsNullOrEmpty(value))
@@ -36,7 +36,7 @@ namespace Dibware.Helpers.Validation
         /// <param name="argumentName">The argument name.</param>
         /// <returns>The argument being checked if argument was not null, empty or whitespace.</returns>
         /// <exception cref="ArgumentNullException"></exception>
-        [DebuggerHidden]    //Does not appear at all in the call stack
+        //[DebuggerHidden]    //Does not appear at all in the call stack
         public static string ArgumentIsNotNullOrWhiteSpace(String value, String argumentName)
         {
             if (String.IsNullOrWhiteSpace(value))

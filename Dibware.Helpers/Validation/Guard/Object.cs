@@ -1,10 +1,12 @@
 ﻿using JetBrains.Annotations;
 using System;
-using System.Diagnostics;
 
 // ReSharper disable once CheckNamespace
 namespace Dibware.Helpers.Validation
 {
+    /// <summary>
+    /// Encapsulates guard clause logic
+    /// </summary>
     public static partial class Guard
     {
         /// <summary>
@@ -15,7 +17,7 @@ namespace Dibware.Helpers.Validation
         /// <param name="value">The value.</param>
         /// <param name="argumentName">The argument name.</param>
         /// <exception cref="ArgumentNullException"></exception>
-        [DebuggerHidden]    //Does not appear at all in the call stack
+        //[DebuggerHidden]    //Does not appear at all in the call stack
         [ContractAnnotation("value: null => halt")]
         public static void ArgumentIsNotNull(object value, [InvokerParameterName] string argumentName)
         {
@@ -32,7 +34,7 @@ namespace Dibware.Helpers.Validation
         /// <param name="value">The value.</param>
         /// <param name="argumentName">Name of the argument.</param>
         /// <exception cref="ArgumentException">The identity cannot be the type's default value;identity</exception>
-        [DebuggerHidden]    //Does not appear at all in the call stack
+        //[DebuggerHidden]    //Does not appear at all in the call stack
         public static void EqualsDefaultOfType<T>(T value, [InvokerParameterName] string argumentName)
         {
             if (Equals(value, default(T)))
