@@ -18,6 +18,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dibware.Helpers.UnitTests",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dibware.Helpers", "DLL\Dibware.Helpers\Dibware.Helpers.csproj", "{1D053F9F-6C71-41BA-99E9-F1AFE97C586B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dibware.Helpers.PackageLoadTester", "Tests\Dibware.Helpers.PackageLoadTester\Dibware.Helpers.PackageLoadTester.csproj", "{24EBF5AB-169C-4DF7-BF8F-9274C6557F4E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -32,6 +34,10 @@ Global
 		{1D053F9F-6C71-41BA-99E9-F1AFE97C586B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1D053F9F-6C71-41BA-99E9-F1AFE97C586B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1D053F9F-6C71-41BA-99E9-F1AFE97C586B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{24EBF5AB-169C-4DF7-BF8F-9274C6557F4E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{24EBF5AB-169C-4DF7-BF8F-9274C6557F4E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{24EBF5AB-169C-4DF7-BF8F-9274C6557F4E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{24EBF5AB-169C-4DF7-BF8F-9274C6557F4E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -39,5 +45,6 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{5EDBDE25-363E-43B7-B5A7-3544B36104EA} = {714FBA7C-D9AA-4F49-9F94-C20EE65F5871}
 		{1D053F9F-6C71-41BA-99E9-F1AFE97C586B} = {1D87EFB3-C08A-4E31-984E-22B96E56122A}
+		{24EBF5AB-169C-4DF7-BF8F-9274C6557F4E} = {714FBA7C-D9AA-4F49-9F94-C20EE65F5871}
 	EndGlobalSection
 EndGlobal
