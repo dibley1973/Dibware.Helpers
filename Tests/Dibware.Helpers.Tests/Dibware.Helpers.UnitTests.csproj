@@ -64,13 +64,13 @@
     <Compile Include="Tests\Validation\EnsureTests.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Dibware.Helpers\Dibware.Helpers.csproj">
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\DLL\Dibware.Helpers\Dibware.Helpers.csproj">
       <Project>{1d053f9f-6c71-41ba-99e9-f1afe97c586b}</Project>
       <Name>Dibware.Helpers</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="packages.config" />
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
